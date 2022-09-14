@@ -1,18 +1,5 @@
-# flutter_application_2
+# Nunca deem pull na main, deixa que eu sempre puxo para a main.
 
-A new Flutter project.
+# Qual quer coisa eu ensino vcs a como trabalhar com as brenchs tbm, no problems
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Mobile
-# Mobile
+# Vou puxar pra main isso aqui e é pra vcs receberem notificação q eu fiz isso, se nao receberem só ativar dentro do git hub
