@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Pages/HomePage.dart';
+import 'Pages/LoginPage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Titulo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.yellow),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
