@@ -19,6 +19,11 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch, //alinhamento
               mainAxisAlignment: MainAxisAlignment.center, //alinhamento
               children: [
+                Container(
+                  child: Image.network(
+                      'https://cdn.wizard.com.br/wp-content/uploads/2020/04/03201951/como-falar-sobre-comidas-em-espanhol.jpg'),
+                ),
+                Divider(),
                 TextFormField(
                   //campo 1 do form
                   autofocus: true,
