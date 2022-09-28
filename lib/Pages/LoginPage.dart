@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: 128,
               height: 128,
-              child: Image.asset('logo.png'),
+              // child: Image.asset('logo.png'),
             ),
             SizedBox(
               height: 20,
@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+                  Radius.circular(25),
                 ),
               ),
               child: SizedBox.expand(
@@ -131,7 +131,7 @@ class LoginPage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Color(0xFF3C5A99),
                 borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+                  Radius.circular(25),
                 ),
               ),
               child: SizedBox.expand(

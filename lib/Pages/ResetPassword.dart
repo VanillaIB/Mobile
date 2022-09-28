@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/SendPass.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   @override
@@ -27,7 +28,10 @@ class ResetPasswordPage extends StatelessWidget {
                       SizedBox(
                         width: 200,
                         height: 200,
-                        // child: Image.asset("assets/reset-password-icon.png"),
+                        child: Image.asset(
+                          "assets/reset-password-icon.png",
+                          width: 100,
+                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -43,7 +47,7 @@ class ResetPasswordPage extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        "Por favor, informe o E-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração de sua senha.",
+                        "Por favor, informe o e-mail cadastrado em sua conta, que enviaremos um link com as instruções para recuperação de sua senha.",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
@@ -100,7 +104,14 @@ class ResetPasswordPage extends StatelessWidget {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SendEmail(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
