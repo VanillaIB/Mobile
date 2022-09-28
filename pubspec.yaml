@@ -57,8 +57,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
- # assets:
-  #   - /assets/images/img1.jpg
+  assets:
+      - assets/logo.png
+      #- assets/loginicon.png
+      #- assets/fb-icon.png
+      #- assets/reset-password-icon.png
+      #- assets/profile-picture.png
+     # - assets/user-picture.png
+      #- assets/app-logo.png
+     # - assets/post-picture-001.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
