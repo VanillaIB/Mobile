@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/SendPass.dart';
 
 class ResetPasswordPage extends StatelessWidget {
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,17 +62,31 @@ class ResetPasswordPage extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: <Widget>[
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: "E-mail",
-                          labelStyle: TextStyle(
-                            color: Colors.black38,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 20,
-                          ),
-                        ),
-                        style: TextStyle(fontSize: 20),
+                      Form(
+                        key: formkey,
+                        child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              labelText: "Email",
+                              labelStyle: TextStyle(
+                                color: Colors.black38,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
+                              ),
+                            ),
+                            style: TextStyle(fontSize: 20),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "Insira um e-mail válido";
+                              }
+                              if (!RegExp(
+                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                  .hasMatch(value)) {
+                                return "Insira um e-mail válido";
+                              } else {
+                                return null;
+                              }
+                            }),
                       ),
                       SizedBox(
                         height: 20,
@@ -105,12 +120,15 @@ class ResetPasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SendEmail(),
-                                ),
-                              );
+                              formkey.currentState?.validate();
+                              if (formkey.currentState?.validate() == true) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SendEmail(),
+                                  ),
+                                );
+                              } else {}
                             },
                           ),
                         ),

@@ -59,10 +59,10 @@ Widget cardItem() {
         const ListTile(
           leading: CircleAvatar(
             backgroundImage: NetworkImage(
-                "https://baltaio.blob.core.windows.net/student-images/1edd5c50-bae9-11e8-8eb4-39de303632c1.jpg"),
+                "https://cdn.dribbble.com/users/77598/screenshots/15211765/media/fcc955283307a8ead2d4e4a8daf0d852.png?compress=1&resize=400x300&vertical=top"),
           ),
-          title: Text("Bruce Wayne"),
-          subtitle: Text("09/05/2019 18:37"),
+          title: Text("Vanilla"),
+          subtitle: Text("00/00/2022 00:00"),
           trailing: Icon(Icons.more_vert),
         ),
         // Container(
