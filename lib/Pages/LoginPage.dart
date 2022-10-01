@@ -4,6 +4,9 @@ import 'package:flutter_application_2/pages/ResetPassword.dart';
 import 'package:flutter_application_2/pages/signup.page.dart';
 
 class LoginPage extends StatelessWidget {
+  final _email = TextEditingController();
+  final _senha = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +18,17 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: 128,
               height: 128,
-              // child: Image.asset('logo.png'),
+              // child: Image.asset(                     ERRO DE CARREGAMENTO DA IMAGEM , CAI EM CACHE E NÂO CARREGA
+              //   'logo.png',
+              //   width: 180,
+              //   height: 200,
+              // ),
             ),
             SizedBox(
               height: 20,
             ),
             TextFormField(
+              controller: _email,
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -32,12 +40,21 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               style: TextStyle(fontSize: 20),
+              validator: ((value) {
+                if (value!.isEmpty) {
+                  return "Informe seu e-mail!";
+                } else {
+                  return "";
+                }
+                return null;
+              }),
             ),
             SizedBox(
               height: 10,
             ),
             TextFormField(
               // autofocus: true,
+              controller: _senha,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
