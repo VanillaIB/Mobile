@@ -65,9 +65,9 @@ Widget cardItem() {
           subtitle: Text("00/00/2022 00:00"),
           trailing: Icon(Icons.more_vert),
         ),
-        // Container(
-        //   child: Image.asset("assets/post-picture-001.png"),
-        // ),
+        Container(
+          child: Image.asset("assets/post-picture-001.png"),
+        ),
         Container(
           padding: EdgeInsets.all(10),
           child: Text(
@@ -76,6 +76,12 @@ Widget cardItem() {
         ButtonTheme(
           child: ButtonBar(
             children: <Widget>[
+              // FlatButton(
+              //   child: Icon(Icons.remove_red_eye),
+              //onPressed: () {
+              //  Navigator.push
+              // },
+              // ),
               FlatButton(
                 child: Icon(Icons.favorite),
                 onPressed: () {},

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/HomePage.dart';
+import 'package:flutter_application_2/Pages/NewRevenuesPage.dart';
+import 'package:flutter_application_2/Pages/ResetPassword.dart';
+import 'package:flutter_application_2/Pages/RevenuesPage.dart';
+import 'package:flutter_application_2/Pages/SendPass.dart';
 
 import 'Pages/LoginPage.dart';
 
@@ -12,6 +17,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       home: LoginPage(),
+      routes: <String, WidgetBuilder>{
+        '/HomePage': (BuildContext context) => HomePage(),
+        '/LoginPage': (BuildContext context) => LoginPage(),
+        '/ResetPassword': (BuildContext context) => ResetPasswordPage(),
+        '/Sendpass': (BuildContext context) => SendEmail(),
+        '/ReceitaPage': (BuildContext context) => ReceitaPage(),
+        '/NovaReceita': (BuildContext context) => NovaReceita(),
+      },
     );
   }
 }

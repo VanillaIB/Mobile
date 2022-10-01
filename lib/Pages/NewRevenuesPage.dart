@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatelessWidget {
-  final formkey = GlobalKey<FormState>();
-
-  final _nome = TextEditingController();
-  final _email = TextEditingController();
-  final _senha = TextEditingController();
+class NovaReceita extends StatelessWidget {
+  const NovaReceita({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final formkey = GlobalKey<FormState>();
+
+    final _nomeReceita = TextEditingController();
+    final _ingredientes = TextEditingController();
+    final _categoria = TextEditingController();
+
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),
@@ -21,9 +23,8 @@ class SignupPage extends StatelessWidget {
               alignment: Alignment(0.0, 1.15),
               decoration: new BoxDecoration(
                 image: new DecorationImage(
-                  image: AssetImage(
-                    "assets/profile-picture.png",
-                  ),
+                  image: NetworkImage(
+                      'https://cdn-icons-png.flaticon.com/512/1665/1665731.png'),
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -69,10 +70,10 @@ class SignupPage extends StatelessWidget {
                   children: [
                     TextFormField(
                         // autofocus: true,
-                        controller: _nome,
+                        controller: _nomeReceita,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                          labelText: "Nome",
+                          labelText: "Titulo",
                           labelStyle: TextStyle(
                             color: Colors.black38,
                             fontWeight: FontWeight.w400,
@@ -94,10 +95,10 @@ class SignupPage extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
-                        controller: _email,
-                        keyboardType: TextInputType.emailAddress,
+                        controller: _ingredientes,
+                        keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                          labelText: "E-mail",
+                          labelText: "Ingredientes",
                           labelStyle: TextStyle(
                             color: Colors.black38,
                             fontWeight: FontWeight.w400,
@@ -109,12 +110,7 @@ class SignupPage extends StatelessWidget {
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
-                            return "Insira um e-mail válido";
-                          }
-                          if (!RegExp(
-                                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                              .hasMatch(value)) {
-                            return "Insira um e-mail válido";
+                            return "Campo Obriatório!";
                           } else {
                             return null;
                           }
@@ -124,11 +120,11 @@ class SignupPage extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
-                        controller: _senha,
+                        controller: _categoria,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: InputDecoration(
-                          labelText: "Senha",
+                          labelText: "Categoria",
                           labelStyle: TextStyle(
                             color: Colors.black38,
                             fontWeight: FontWeight.w400,
@@ -178,13 +174,13 @@ class SignupPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     if (formkey.currentState?.validate() == true) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Cadastrado com Sucesso!')));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Receita cadastrada com Sucesso!')));
                       Navigator.pop(context);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text(
-                              'Erro ao realizar cadastro !Favor insira os dados corretamente!')));
+                              'Erro ao realizar cadastro da receita! Favor insira os dados corretamente!')));
                     }
                   },
                 ),
