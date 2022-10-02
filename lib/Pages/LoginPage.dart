@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
             Container(
               height: 40,
               alignment: Alignment.centerRight,
-              child: FlatButton(
+              child: TextButton(
                 child: Text(
                   "Recuperar Senha",
                   textAlign: TextAlign.right,
@@ -109,7 +109,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -168,7 +168,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -206,7 +206,7 @@ class LoginPage extends StatelessWidget {
             ),
             Container(
               height: 40,
-              child: FlatButton(
+              child: TextButton(
                 child: Text(
                   "Cadastre-se",
                   textAlign: TextAlign.center,

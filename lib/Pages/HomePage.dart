@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           Container(
             width: 60,
-            child: FlatButton(
+            child: TextButton(
               child: Icon(
                 Icons.search,
                 color: Color(0xFFBABABA),
@@ -82,11 +82,11 @@ Widget cardItem() {
               //  Navigator.push
               // },
               // ),
-              FlatButton(
+              TextButton(
                 child: Icon(Icons.favorite),
                 onPressed: () {},
               ),
-              FlatButton(
+              TextButton(
                 child: Icon(Icons.share),
                 onPressed: () {},
               ),
