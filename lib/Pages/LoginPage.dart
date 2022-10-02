@@ -181,12 +181,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      Container(
-                        child: SizedBox(
-                          child: Image.asset("assets/fb-icon.png"),
-                          height: 28,
-                          width: 28,
-                        ),
+                      SizedBox(
+                        height: 28,
+                        width: 28,
+                        child: Image.asset("assets/fb-icon.png"),
                       )
                     ],
                   ),
@@ -204,7 +202,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
+            SizedBox(
               height: 40,
               child: TextButton(
                 child: Text(

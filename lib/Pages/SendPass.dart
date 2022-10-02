@@ -23,40 +23,38 @@ class SendEmail extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        width: 200,
-                        height: 200,
-                        child: Image.asset(
-                          "assets/reset-password-icon.png",
-                          width: 100,
-                        ),
+                Column(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: Image.asset(
+                        "assets/reset-password-icon.png",
+                        width: 100,
                       ),
-                      SizedBox(
-                        height: 20,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "E-mail enviado",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w500,
                       ),
-                      Text(
-                        "E-mail enviado",
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w500,
-                        ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "O link de redefinição de senha foi enviado para o e-mail informado! Aguarde alguns minutos e verifique sua caixa de e-mail!",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "O link de redefinição de senha foi enviado para o e-mail informado! Aguarde alguns minutos e verifique sua caixa de e-mail!",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  ),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
                 ),
               ],
             )
