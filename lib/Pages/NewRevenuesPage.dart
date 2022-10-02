@@ -1,25 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/HomePage.dart';
 
 class NovaReceita extends StatelessWidget {
   const NovaReceita({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dropValue = ValueNotifier('');
+    final categorias = [
+      'Doces',
+      'Carnes',
+      'Bolos',
+      'Tortas',
+      'Massas',
+      'Bebidas',
+      'Saladas',
+      'Ligth'
+    ];
+
     final formkey = GlobalKey<FormState>();
 
     final _nomeReceita = TextEditingController();
     final _ingredientes = TextEditingController();
-    final _categoria = TextEditingController();
+    final _preparo = TextEditingController();
+    //final _categoria = TextEditingController();
 
     return Scaffold(
+      appBar: AppBar(title: Text('Criar uma nova receita')),
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
             Container(
-              width: 200,
-              height: 200,
+              width: 150,
+              height: 150,
               alignment: Alignment(0.0, 1.15),
               decoration: new BoxDecoration(
                 image: new DecorationImage(
@@ -29,8 +44,8 @@ class NovaReceita extends StatelessWidget {
                 ),
               ),
               child: Container(
-                height: 60,
-                width: 60,
+                height: 40,
+                width: 40,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -43,7 +58,7 @@ class NovaReceita extends StatelessWidget {
                     ],
                   ),
                   border: Border.all(
-                    width: 4.0,
+                    width: 2.0,
                     color: const Color(0xFFFFFFFF),
                   ),
                   borderRadius: BorderRadius.all(
@@ -95,6 +110,7 @@ class NovaReceita extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
+                        maxLines: null,
                         controller: _ingredientes,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
@@ -120,11 +136,11 @@ class NovaReceita extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
-                        controller: _categoria,
+                        controller: _preparo,
+                        maxLines: null,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
                         decoration: InputDecoration(
-                          labelText: "Categoria",
+                          labelText: "Modo de Preparo",
                           labelStyle: TextStyle(
                             color: Colors.black38,
                             fontWeight: FontWeight.w400,
@@ -139,6 +155,43 @@ class NovaReceita extends StatelessWidget {
                             return null;
                           }
                         }),
+
+                    ValueListenableBuilder(
+                        valueListenable: dropValue,
+                        builder: (BuildContext context, String value, _) {
+                          return DropdownButtonFormField<String>(
+                            hint: const Text('Seleciona a Categoria'),
+                            value: (value.isEmpty) ? null : value,
+                            onChanged: (escolha) =>
+                                dropValue.value = escolha.toString(),
+                            items: categorias
+                                .map(
+                                  (opcao) => DropdownMenuItem(
+                                      child: Text(opcao), value: opcao),
+                                )
+                                .toList(),
+                          );
+                        }),
+                    // TextFormField(
+                    //     autofocus: true,
+                    //     controller: _categoria,
+                    //     keyboardType: TextInputType.text,
+                    //     decoration: InputDecoration(
+                    //       labelText: "Categoria",
+                    //       labelStyle: TextStyle(
+                    //         color: Colors.black38,
+                    //         fontWeight: FontWeight.w400,
+                    //         fontSize: 20,
+                    //       ),
+                    //     ),
+                    //     style: TextStyle(fontSize: 20),
+                    //     validator: (String? value) {
+                    //       if (value == null || value.isEmpty) {
+                    //         return "Campo Obrigatório!";
+                    //       } else {
+                    //         return null;
+                    //       }
+                    //     }),
                   ],
                 )),
             SizedBox(
@@ -197,7 +250,12 @@ class NovaReceita extends StatelessWidget {
                   "Cancelar",
                   textAlign: TextAlign.center,
                 ),
-                onPressed: () => Navigator.pop(context, false),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                ),
               ),
             ),
           ],
