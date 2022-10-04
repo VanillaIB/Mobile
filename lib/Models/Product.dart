@@ -18,11 +18,11 @@ class Product {
 List<Product> products = [
   Product(
       id: 1,
-      title: "Office Code",
+      title: "Carolina",
       price: 234,
       size: 12,
       description: dummyText,
-      image: "assets/images/products/carolina.png",
+      image: "assets/images/carolina.png",
       color: Color(0xFF3D82AE)),
   Product(
       id: 2,
@@ -30,7 +30,7 @@ List<Product> products = [
       price: 234,
       size: 8,
       description: dummyText,
-      image: "assets/images/products/feijoada.png",
+      image: "assets/images/feijoada.png",
       color: Color(0xFFD3A984)),
   Product(
       id: 3,
@@ -38,7 +38,7 @@ List<Product> products = [
       price: 234,
       size: 10,
       description: dummyText,
-      image: "assets/images/products/figado_acebolado.png",
+      image: "assets/images/figado_acebolado.png",
       color: Color(0xFF989493)),
   Product(
       id: 4,
@@ -46,7 +46,7 @@ List<Product> products = [
       price: 234,
       size: 11,
       description: dummyText,
-      image: "assets/images/products/porco_marzipa.png",
+      image: "assets/images/porco_marzipa.png",
       color: Color(0xFFE6B398)),
   Product(
       id: 5,
@@ -54,7 +54,7 @@ List<Product> products = [
       price: 234,
       size: 12,
       description: dummyText,
-      image: "assets/images/products/strogonoff-de-frango.jpg",
+      image: "assets/images/strogonoff-de-frango.jpg",
       color: Color(0xFFFB7883)),
 ];
 

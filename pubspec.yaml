@@ -57,8 +57,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/images/homepage
-    - assets/images/products
+    - assets/images/carolina.png
     - assets/icons/
     - assets/logo.png
     - assets/loginicon.png
