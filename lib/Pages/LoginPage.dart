@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Controller/ValidacaoLogin.dart';
 import 'package:flutter_application_2/Models/Login.dart';
-import 'package:flutter_application_2/Pages/HomePage.dart';
+import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/NewRevenuespage.dart';
 import 'package:flutter_application_2/pages/ResetPassword.dart';
 import 'package:flutter_application_2/pages/signup.page.dart';

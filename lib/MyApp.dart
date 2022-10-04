@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage.dart';
+import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/NewRevenuesPage.dart';
 import 'package:flutter_application_2/Pages/ResetPassword.dart';
 import 'package:flutter_application_2/Pages/RevenuesPage.dart';
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Quindimliça receitas',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
-      home: LoginPage(),
+      /* * ! Alterar a homepage*/
+      home: HomePage(),
       routes: <String, WidgetBuilder>{
         '/HomePage': (BuildContext context) => HomePage(),
         '/LoginPage': (BuildContext context) => LoginPage(),
