@@ -58,6 +58,10 @@ flutter:
   assets:
     - assets/images/
     - assets/images/carolina.png
+    - assets/images/feijoada.jpg
+    - assets/images/figado_acebolado.jpeg
+    - assets/images/porco_marzipa.png
+    - assets/images/strogonoff-de-frango.jpg
     - assets/icons/
     - assets/logo.png
     - assets/loginicon.png

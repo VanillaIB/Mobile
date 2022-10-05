@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
+import 'package:flutter_application_2/Pages/HomePage/components/receitas_ativas.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'categorias.dart';
 
@@ -32,42 +33,10 @@ class BodyHome extends StatelessWidget {
                   mainAxisSpacing: kDefaultPaddin,
                   crossAxisSpacing: kDefaultPaddin,
                   childAspectRatio: 0.75),
-              itemBuilder: (context, index) => ItemCard(
+              itemBuilder: (context, index) => ReceitasAtivas(
                 product: products[index],
               ),
             ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class ItemCard extends StatelessWidget {
-  final Product product;
-  //Function apertou;
-  const ItemCard({
-    Key? key,
-    required this.product,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: products[0].color,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Image.asset(products[0].image),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-          child: Text(
-            products[0].title,
-            style: TextStyle(color: kTextLightColor),
           ),
         ),
       ],
