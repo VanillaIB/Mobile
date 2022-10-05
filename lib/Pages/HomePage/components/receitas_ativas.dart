@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/detalhes_receitas/tela_detalhes.dart';
 
 import '../../../Models/Product.dart';
-import '../../../constants.dart';
 
 class ReceitasAtivas extends StatelessWidget {
   final Product product;
@@ -24,6 +23,46 @@ class ReceitasAtivas extends StatelessWidget {
           ),
         ),
       ),
+      child: Card(
+        child: Stack(
+          alignment: FractionalOffset.bottomCenter,
+          children: <Widget>[
+            Container(
+              height: 600,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(product.image),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [0.3, 1],
+                  colors: [
+                    Color(0xFFF58524),
+                    Color(0XFFF92B7F),
+                  ],
+                ),
+              ),
+              alignment: Alignment.center,
+              height: 40.0,
+              child: Text(
+                product.title,
+                style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16.0,
+                    color: Colors.white),
+              ),
+            )
+          ],
+        ),
+      ),
+
+      /*
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -58,17 +97,8 @@ class ReceitasAtivas extends StatelessWidget {
                   color: Colors.white),
             ),
           )
-
-          /*
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-            child: Text(
-              product.title,
-              style: TextStyle(color: Colors.black, fontSize: 18),
-            ),
-          ),*/
         ],
-      ),
+      ), */
     );
   }
 }

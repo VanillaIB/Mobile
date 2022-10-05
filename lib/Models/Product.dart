@@ -46,7 +46,7 @@ List<Product> products = [
       price: 234,
       size: 11,
       description: dummyText,
-      image: "assets/images/porco_marzipa.png",
+      image: "assets/images/porco_marzipa.jpg",
       color: Color.fromARGB(255, 241, 99, 22)),
   Product(
       id: 5,
