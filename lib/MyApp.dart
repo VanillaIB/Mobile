@@ -6,6 +6,7 @@ import 'package:flutter_application_2/Pages/RevenuesPage.dart';
 import 'package:flutter_application_2/Pages/SendPass.dart';
 
 import 'Pages/LoginPage.dart';
+import 'Pages/favorites/favorites_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
