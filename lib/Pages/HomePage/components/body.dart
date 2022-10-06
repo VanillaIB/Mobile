@@ -32,7 +32,7 @@ class BodyHome extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: kDefaultPaddin,
                   crossAxisSpacing: kDefaultPaddin,
-                  childAspectRatio: 0.75),
+                  childAspectRatio: 1),
               itemBuilder: (context, index) => ReceitasAtivas(
                 product: products[index],
               ),
