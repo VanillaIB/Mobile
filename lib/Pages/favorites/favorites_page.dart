@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 
 class FavoriteRevenues extends StatelessWidget {
   final lista = products.length;
@@ -57,32 +58,4 @@ class FavoriteRevenues extends StatelessWidget {
               );
             }));
   }
-}
-
-AppBar appBarCriado() {
-  return AppBar(
-    backgroundColor: Colors.white,
-    elevation: 1,
-    leading: IconButton(
-      icon: SvgPicture.asset("assets/icons/back.svg"),
-      onPressed: () {},
-    ),
-    actions: <Widget>[
-      IconButton(
-        icon: SvgPicture.asset(
-          "assets/icons/search.svg",
-          color: Colors.black,
-        ),
-        onPressed: () {},
-      ),
-      IconButton(
-        icon: SvgPicture.asset(
-          "assets/icons/cart.svg",
-          color: Colors.black,
-        ),
-        onPressed: () {},
-      ),
-      SizedBox(width: 20 / 2)
-    ],
-  );
 }

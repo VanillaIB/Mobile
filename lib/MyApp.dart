@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
+import 'package:flutter_application_2/Pages/MyRevenues.dart';
 import 'package:flutter_application_2/Pages/NewRevenuesPage.dart';
 import 'package:flutter_application_2/Pages/ResetPassword.dart';
 import 'package:flutter_application_2/Pages/RevenuesPage.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/ResetPassword': (BuildContext context) => ResetPasswordPage(),
         '/Sendpass': (BuildContext context) => SendEmail(),
         '/ReceitaPage': (BuildContext context) => ReceitaPage(),
-        '/NovaReceita': (BuildContext context) => NovaReceita(),
+        '/NovaReceita': (BuildContext context) => NewRevenues(),
       },
     );
   }

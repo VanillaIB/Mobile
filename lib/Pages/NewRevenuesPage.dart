@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 
-class NovaReceita extends StatelessWidget {
-  const NovaReceita({super.key});
+class NewRevenues extends StatelessWidget {
+  const NewRevenues({super.key});
 
   @override
   Widget build(BuildContext context) {
     final dropValue = ValueNotifier('');
-    final categorias = [
-      'Doces',
-      'Carnes',
-      'Bolos',
-      'Tortas',
-      'Massas',
-      'Bebidas',
-      'Saladas',
-      'Ligth'
-    ];
+    final categorias = ['Doces', 'Salgados', 'Bolos', 'Carnes'];
 
     final formkey = GlobalKey<FormState>();
 
@@ -26,7 +17,7 @@ class NovaReceita extends StatelessWidget {
     //final _categoria = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(title: Text('Criar uma nova receita')),
+      appBar: appBarCriado(),
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),
         color: Colors.white,
@@ -126,7 +117,7 @@ class NovaReceita extends StatelessWidget {
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
-                            return "Campo Obriatório!";
+                            return "Campo Obrigatório!";
                           } else {
                             return null;
                           }
