@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'ImagemProduto.dart';
+import 'imagemproduto.dart';
 import 'descricao.dart';
 
 class Body extends StatelessWidget {

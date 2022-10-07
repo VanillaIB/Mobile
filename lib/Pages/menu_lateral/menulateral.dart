@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
-import 'package:flutter_application_2/Pages/MyRevenues.dart';
-import 'package:flutter_application_2/Pages/login/LoginPage.dart';
-import 'package:flutter_application_2/Pages/nova_receita/NovaReceita.dart';
+import 'package:flutter_application_2/Pages/homepage/homepage.dart';
+import 'package:flutter_application_2/Pages/login/paginalogin.dart';
+import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
+
+import '../minhareceitas.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({

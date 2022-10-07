@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
+import 'package:flutter_application_2/Pages/homepage/homepage.dart';
 import 'package:flutter_application_2/pages/login/ResetPassword.dart';
 import 'package:flutter_application_2/pages/login/signup.page.dart';
 

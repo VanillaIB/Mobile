@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
-import 'package:flutter_application_2/Pages/MyRevenues.dart';
-import 'package:flutter_application_2/Pages/login/ResetPassword.dart';
-import 'package:flutter_application_2/Pages/login/SendPass.dart';
-import 'package:flutter_application_2/Pages/nova_receita/NovaReceita.dart';
-import 'Pages/login/LoginPage.dart';
+import 'package:flutter_application_2/Pages/homepage/homepage.dart';
+import 'package:flutter_application_2/Pages/login/novasenha.dart';
+import 'Pages/login/paginalogin.dart';
+import 'Pages/login/senhaok.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

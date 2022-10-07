@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
+import 'package:flutter_application_2/Pages/homepage/homepage.dart';
 
 class FavoriteRevenues extends StatelessWidget {
   final lista = receitas.length;
