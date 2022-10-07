@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/SendPass.dart';
+import 'package:flutter_application_2/Pages/login/SendPass.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
