@@ -3,6 +3,11 @@ import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_application_2/Pages/homepage/homepage.dart';
 
+/*
+
+      ESSA PÁGINA VAI SER VISTA APENAS DEPOIS 
+
+ */
 class FavoriteRevenues extends StatelessWidget {
   final lista = receitas.length;
   FavoriteRevenues({super.key});

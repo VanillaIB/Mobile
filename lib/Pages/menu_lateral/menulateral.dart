@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/homepage/homepage.dart';
 import 'package:flutter_application_2/Pages/login/paginalogin.dart';
 import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
-
-import '../minhareceitas.dart';
+import '../receitasfavoritas/minhareceitas.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({

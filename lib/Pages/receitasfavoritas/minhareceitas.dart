@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
-import '../Controller/constants.dart';
+import '../../Controller/constants.dart';
 
 class MyRevenues extends StatelessWidget {
   final lista = receitas.length;
