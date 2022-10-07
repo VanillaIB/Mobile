@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../Models/Product.dart';
 import '../../../constants.dart';
 
-class descricao extends StatelessWidget {
-  const descricao({
+class Descricao extends StatelessWidget {
+  const Descricao({
     Key? key,
     required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final Receita product;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class descricao extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: paddingpadrao),
       child: Text(
         product.description,
-        style: TextStyle(height: 1.5),
+        style: const TextStyle(height: 1.5),
       ),
     );
   }

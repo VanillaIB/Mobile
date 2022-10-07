@@ -3,6 +3,8 @@ import 'package:flutter_application_2/Pages/login/SendPass.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
+
+  ResetPasswordPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,55 +12,53 @@ class ResetPasswordPage extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.black38,
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        width: 200,
-                        height: 200,
-                        child: Image.asset(
-                          "assets/reset-password-icon.png",
-                          width: 100,
-                        ),
+                Column(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: Image.asset(
+                        "assets/reset-password-icon.png",
+                        width: 100,
                       ),
-                      SizedBox(
-                        height: 20,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "Esqueceu sua senha?",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w500,
                       ),
-                      Text(
-                        "Esqueceu sua senha?",
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w500,
-                        ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      "Por favor, informe o e-mail cadastrado em sua conta, que enviaremos um link com as instruções para recuperação de sua senha.",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Por favor, informe o e-mail cadastrado em sua conta, que enviaremos um link com as instruções para recuperação de sua senha.",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  ),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
                 ),
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: Column(
                     children: <Widget>[
@@ -66,7 +66,7 @@ class ResetPasswordPage extends StatelessWidget {
                         key: formkey,
                         child: TextFormField(
                             keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               labelText: "Email",
                               labelStyle: TextStyle(
                                 color: Colors.black38,
@@ -74,7 +74,7 @@ class ResetPasswordPage extends StatelessWidget {
                                 fontSize: 20,
                               ),
                             ),
-                            style: TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 20),
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
                                 return "Insira um e-mail válido";
@@ -88,13 +88,13 @@ class ResetPasswordPage extends StatelessWidget {
                               }
                             }),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         height: 60,
                         alignment: Alignment.centerLeft,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -110,7 +110,7 @@ class ResetPasswordPage extends StatelessWidget {
                         ),
                         child: SizedBox.expand(
                           child: TextButton(
-                            child: Text(
+                            child: const Text(
                               "Enviar",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -125,7 +125,7 @@ class ResetPasswordPage extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SendEmail(),
+                                    builder: (context) => const SendEmail(),
                                   ),
                                 );
                               } else {}
@@ -133,7 +133,7 @@ class ResetPasswordPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                     ],

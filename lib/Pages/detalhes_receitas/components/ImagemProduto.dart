@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../Models/Product.dart';
 import '../../../constants.dart';
 
-class Imagem_receita extends StatelessWidget {
-  const Imagem_receita({
+class ImagemReceita extends StatelessWidget {
+  const ImagemReceita({
     Key? key,
     required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final Receita product;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,8 @@ class Imagem_receita extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
-            child: Text(
+            margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+            child: const Text(
               "Faça essa receita maravilhosa: ",
               style: TextStyle(
                   color: Colors.black,
@@ -28,7 +28,7 @@ class Imagem_receita extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(15, 15, 0, 15),
+            margin: const EdgeInsets.fromLTRB(15, 15, 0, 15),
             child: Text(
               product.title,
               style: Theme.of(context)

@@ -3,7 +3,7 @@ import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
 
 class FavoriteRevenues extends StatelessWidget {
-  final lista = products.length;
+  final lista = receitas.length;
   FavoriteRevenues({super.key});
 
   @override
@@ -11,9 +11,9 @@ class FavoriteRevenues extends StatelessWidget {
     return Scaffold(
         appBar: appBarCriado(),
         body: GridView.builder(
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            itemCount: products.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+            itemCount: receitas.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () {
@@ -26,11 +26,11 @@ class FavoriteRevenues extends StatelessWidget {
                       Container(
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                        image: AssetImage(products[index].image),
+                        image: AssetImage(receitas[index].image),
                         fit: BoxFit.cover,
                       ))),
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -44,8 +44,8 @@ class FavoriteRevenues extends StatelessWidget {
                         alignment: Alignment.center,
                         height: 40.0,
                         child: Text(
-                          products[index].title,
-                          style: TextStyle(
+                          receitas[index].title,
+                          style: const TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16.0,
                               color: Colors.white),
@@ -82,7 +82,7 @@ AppBar appBarCriado() {
         ),
         onPressed: () {},
       ),
-      SizedBox(width: 20 / 2)
+      const SizedBox(width: 20 / 2)
     ],
   );
 }

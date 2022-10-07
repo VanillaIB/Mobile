@@ -1,3 +1,4 @@
+// ignore: file_names
 class Login {
   final String email;
   final String senha;

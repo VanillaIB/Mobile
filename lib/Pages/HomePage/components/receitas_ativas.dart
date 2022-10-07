@@ -4,7 +4,7 @@ import 'package:flutter_application_2/Pages/detalhes_receitas/tela_detalhes.dart
 import '../../../Models/Product.dart';
 
 class ReceitasAtivas extends StatelessWidget {
-  final Product product;
+  final Receita product;
   // final Function press;
   const ReceitasAtivas({
     Key? key,
@@ -19,7 +19,7 @@ class ReceitasAtivas extends StatelessWidget {
         context,
         MaterialPageRoute(
           builder: (context) => TelaDetalhes(
-            product: products[0],
+            product: receitas[product.id],
           ),
         ),
       ),
@@ -37,7 +37,7 @@ class ReceitasAtivas extends StatelessWidget {
               ),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -52,7 +52,7 @@ class ReceitasAtivas extends StatelessWidget {
               height: 40.0,
               child: Text(
                 product.title,
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 16.0,
                     color: Colors.white),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Controller/ValidacaoLogin.dart';
-import 'package:flutter_application_2/Models/Login.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/pages/login/ResetPassword.dart';
 import 'package:flutter_application_2/pages/login/signup.page.dart';
@@ -9,15 +7,17 @@ class LoginPage extends StatelessWidget {
   final _email = TextEditingController();
   final _senha = TextEditingController();
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               width: 128,
               height: 128,
               // child: Image.asset(                     ERRO DE CARREGAMENTO DA IMAGEM , CAI EM CACHE E NÂO CARREGA
@@ -26,14 +26,14 @@ class LoginPage extends StatelessWidget {
               //   height: 200,
               // ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
               controller: _email,
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "E-mail",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -41,17 +41,16 @@ class LoginPage extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
               validator: ((value) {
                 if (value!.isEmpty) {
                   return "Informe seu e-mail!";
                 } else {
                   return "";
                 }
-                return null;
               }),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             TextFormField(
@@ -59,7 +58,7 @@ class LoginPage extends StatelessWidget {
               controller: _senha,
               keyboardType: TextInputType.text,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -67,13 +66,13 @@ class LoginPage extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Container(
               height: 40,
               alignment: Alignment.centerRight,
               child: TextButton(
-                child: Text(
+                child: const Text(
                   "Recuperar Senha",
                   textAlign: TextAlign.right,
                 ),
@@ -87,13 +86,13 @@ class LoginPage extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -112,7 +111,7 @@ class LoginPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "Login",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -121,12 +120,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      Container(
-                        child: SizedBox(
-                          child: Image.asset("assets/loginicon.png"),
-                          height: 40,
-                          width: 40,
-                        ),
+                      SizedBox(
+                        height: 40,
+                        width: 40,
+                        child: Image.asset("assets/loginicon.png"),
                       )
                     ],
                   ),
@@ -134,33 +131,33 @@ class LoginPage extends StatelessWidget {
                     final String email = _email.text;
                     final String senha = _senha.text;
 
-                    final Login novoLogin = Login(email, senha);
-
                     if (email == 'teste' && senha == '1234') {
+                      // ignore: avoid_print
                       print('Login Realizado');
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomePage(),
+                          builder: (context) => const HomePage(),
                         ),
                       );
                     } else {
+                      // ignore: avoid_print
                       print('Erro ao efetuar Login!');
 
                       ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Dados Incorretos!')));
+                          const SnackBar(content: Text('Dados Incorretos!')));
                     }
                   },
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFF3C5A99),
                 borderRadius: BorderRadius.all(
                   Radius.circular(25),
@@ -171,7 +168,7 @@ class LoginPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "Login com Facebook",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -187,22 +184,17 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                    //MaterialPageRoute(
-                    //   builder: (context) => NovaReceita(),
-                    //),
-                  },
+                  onPressed: () {},
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
               height: 40,
               child: TextButton(
-                child: Text(
+                child: const Text(
                   "Cadastre-se",
                   textAlign: TextAlign.center,
                 ),

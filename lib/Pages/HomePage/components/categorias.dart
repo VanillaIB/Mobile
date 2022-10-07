@@ -46,7 +46,7 @@ class CategoriasState extends State<Categorias> {
                       : cortextopadraolight),
             ),
             Container(
-                margin: EdgeInsets.only(top: paddingpadrao / 4),
+                margin: const EdgeInsets.only(top: paddingpadrao / 4),
                 height: 2,
                 width: 30,
                 color: categoriaSelecionada == index

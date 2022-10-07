@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/LoginPage.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class menulateral extends StatelessWidget {
-  const menulateral({
+class MenuLateral extends StatelessWidget {
+  const MenuLateral({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final nome = 'Fulano de Tal';
-    final email = 'fulanodetal@gmail.com';
-    final Image = 'assets/images/porco_marzipa.jpg';
+    const nome = 'Fulano de Tal';
+    const email = 'fulanodetal@gmail.com';
+    const image = 'assets/images/porco_marzipa.jpg';
     return Drawer(
       child: Material(
         color: Colors.white,
         child: ListView(
           children: <Widget>[
             headerMenu(
-              fotoPerfil: Image,
+              fotoPerfil: image,
               nome: nome,
               email: email,
-              onClicked: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomePage())),
+              onClicked: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomePage())),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
                   const SizedBox(
@@ -56,7 +55,7 @@ class menulateral extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.black,
                   ),
                   const SizedBox(
@@ -81,7 +80,7 @@ class menulateral extends StatelessWidget {
 
   Widget itemlista(
       {required String text, required IconData icon, VoidCallback? onClicked}) {
-    final color = Colors.black;
+    const color = Colors.black;
 
     return ListTile(
       leading: Icon(
@@ -90,7 +89,7 @@ class menulateral extends StatelessWidget {
       ),
       title: Text(
         text,
-        style: TextStyle(color: color),
+        style: const TextStyle(color: color),
       ),
       onTap: onClicked,
     );
@@ -102,21 +101,21 @@ class menulateral extends StatelessWidget {
       case 0:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => menulateral(),
+            builder: (context) => const MenuLateral(),
           ),
         );
         break;
       case 1:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => menulateral(),
+            builder: (context) => const MenuLateral(),
           ),
         );
         break;
       case 2:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => menulateral(),
+            builder: (context) => const MenuLateral(),
           ),
         );
         break;
@@ -138,14 +137,14 @@ class menulateral extends StatelessWidget {
       InkWell(
         onTap: onClicked,
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 40),
+          padding: const EdgeInsets.symmetric(vertical: 40),
           child: Row(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage('assets/images/porco_marzipa.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Column(
@@ -153,14 +152,14 @@ class menulateral extends StatelessWidget {
                 children: [
                   Text(
                     nome,
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    style: const TextStyle(fontSize: 20, color: Colors.black),
                   ),
                   const SizedBox(
                     height: 4,
                   ),
                   Text(
                     email,
-                    style: TextStyle(fontSize: 14, color: Colors.black),
+                    style: const TextStyle(fontSize: 14, color: Colors.black),
                   )
                 ],
               )

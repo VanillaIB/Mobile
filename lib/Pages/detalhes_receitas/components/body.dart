@@ -7,7 +7,7 @@ import 'ImagemProduto.dart';
 import 'descricao.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  final Receita product;
   const Body({super.key, required this.product});
 
   get ktextcolor => null;
@@ -59,11 +59,11 @@ class Body extends StatelessWidget {
                           ),
                         ],
                       ),
-                      descricao(product: product)
+                      Descricao(product: product)
                     ],
                   ),
                 ),
-                Imagem_receita(product: product),
+                ImagemReceita(product: product),
               ],
             ),
           ),

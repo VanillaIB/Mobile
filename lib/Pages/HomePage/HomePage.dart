@@ -5,12 +5,14 @@ import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarCriado(context),
-      drawer: menulateral(),
-      body: BodyHome(),
+      drawer: const MenuLateral(),
+      body: const BodyHome(),
     );
   }
 }
@@ -42,7 +44,7 @@ AppBar appBarCriado(BuildContext context) {
         ),
         onPressed: () {},
       ),
-      SizedBox(width: paddingpadrao / 2)
+      const SizedBox(width: paddingpadrao / 2)
     ],
   );
 }

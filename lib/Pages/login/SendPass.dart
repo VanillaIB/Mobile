@@ -10,13 +10,13 @@ class SendEmail extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.black38,
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
@@ -33,20 +33,20 @@ class SendEmail extends StatelessWidget {
                         width: 100,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "E-mail enviado",
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "O link de redefinição de senha foi enviado para o e-mail informado! Aguarde alguns minutos e verifique sua caixa de e-mail!",
                       style: TextStyle(
                         fontSize: 16,
