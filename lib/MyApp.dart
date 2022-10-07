@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       /* * ! Alterar a homepage*/
-      home: MyRevenues(),
+      home: NovaReceita(),
       routes: <String, WidgetBuilder>{
         '/HomePage': (BuildContext context) => const HomePage(),
         '/LoginPage': (BuildContext context) => LoginPage(),

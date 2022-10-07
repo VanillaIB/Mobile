@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../constants.dart';
+import '../MyRevenues.dart';
 
 class NovaReceita extends StatelessWidget {
   const NovaReceita({super.key});
@@ -17,7 +21,7 @@ class NovaReceita extends StatelessWidget {
     //final _categoria = TextEditingController();
 
     return Scaffold(
-      appBar: appBarCriado(context),
+      appBar: buildAppBar(context),
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),
         color: Colors.white,
@@ -234,4 +238,34 @@ class NovaReceita extends StatelessWidget {
       ),
     );
   }
+}
+
+AppBar buildAppBar(BuildContext context) {
+  return AppBar(
+    backgroundColor: Colors.white,
+    elevation: 1,
+    leading: IconButton(
+      icon: SvgPicture.asset('assets/icons/back.svg'),
+      onPressed: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      ),
+    ),
+    actions: <Widget>[
+      IconButton(
+        icon: SvgPicture.asset('assets/icons/heart.svg'),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyRevenues(),
+          ),
+        ),
+      ),
+      const SizedBox(
+        width: paddingpadrao / 2,
+      )
+    ],
+  );
 }

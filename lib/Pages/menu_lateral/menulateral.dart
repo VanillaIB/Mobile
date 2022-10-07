@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
+import 'package:flutter_application_2/Pages/MyRevenues.dart';
 import 'package:flutter_application_2/Pages/login/LoginPage.dart';
+import 'package:flutter_application_2/Pages/nova_receita/NovaReceita.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({
@@ -101,21 +103,21 @@ class MenuLateral extends StatelessWidget {
       case 0:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const MenuLateral(),
+            builder: (context) => const HomePage(),
           ),
         );
         break;
       case 1:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const MenuLateral(),
+            builder: (context) => MyRevenues(),
           ),
         );
         break;
       case 2:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const MenuLateral(),
+            builder: (context) => const NovaReceita(),
           ),
         );
         break;

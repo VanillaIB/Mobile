@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/components/body.dart';
+import 'package:flutter_application_2/Pages/MyRevenues.dart';
 import 'package:flutter_application_2/Pages/menu_lateral/menulateral.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -42,7 +43,12 @@ AppBar appBarCriado(BuildContext context) {
           "assets/icons/heart.svg",
           color: cortextopadrao,
         ),
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyRevenues(),
+          ),
+        ),
       ),
       const SizedBox(width: paddingpadrao / 2)
     ],

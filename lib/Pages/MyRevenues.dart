@@ -13,7 +13,7 @@ class MyRevenues extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarCriado(context),
+      appBar: buildAppBar(context),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -81,4 +81,24 @@ class MyRevenues extends StatelessWidget {
       ),
     );
   }
+}
+
+AppBar buildAppBar(BuildContext context) {
+  return AppBar(
+    backgroundColor: Colors.white,
+    elevation: 1,
+    leading: IconButton(
+      icon: SvgPicture.asset('assets/icons/back.svg'),
+      onPressed: () => Navigator.pop(context),
+    ),
+    actions: <Widget>[
+      IconButton(
+        icon: SvgPicture.asset('assets/icons/heart.svg'),
+        onPressed: () {},
+      ),
+      const SizedBox(
+        width: paddingpadrao / 2,
+      )
+    ],
+  );
 }

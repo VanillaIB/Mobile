@@ -11,14 +11,6 @@ AppBar buildAppBar(BuildContext context) {
       onPressed: () => Navigator.pop(context),
     ),
     actions: <Widget>[
-      IconButton(
-        icon: SvgPicture.asset('assets/icons/back.svg'),
-        onPressed: () {},
-      ),
-      IconButton(
-        icon: SvgPicture.asset('assets/icons/back.svg'),
-        onPressed: () {},
-      ),
       const SizedBox(
         width: paddingpadrao / 2,
       )
