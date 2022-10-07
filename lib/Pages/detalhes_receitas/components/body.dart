@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
-import 'package:flutter_application_2/constants.dart';
+import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'ImagemProduto.dart';
 import 'descricao.dart';

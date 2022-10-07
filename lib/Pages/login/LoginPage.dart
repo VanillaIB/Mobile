@@ -17,14 +17,14 @@ class LoginPage extends StatelessWidget {
         color: Colors.white,
         child: ListView(
           children: <Widget>[
-            const SizedBox(
-              width: 128,
-              height: 128,
-              // child: Image.asset(                     ERRO DE CARREGAMENTO DA IMAGEM , CAI EM CACHE E NÂO CARREGA
-              //   'logo.png',
-              //   width: 180,
-              //   height: 200,
-              // ),
+            SizedBox(
+              width: 200,
+              height: 200,
+              child: Image.asset(
+                'assets/logo.png',
+                width: 100,
+                height: 200,
+              ),
             ),
             const SizedBox(
               height: 20,

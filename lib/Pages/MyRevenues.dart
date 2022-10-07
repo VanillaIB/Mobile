@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constants.dart';
+import '../Controller/constants.dart';
 import 'HomePage/HomePage.dart';
 import 'nova_receita/NovaReceita.dart';
 

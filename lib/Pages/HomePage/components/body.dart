@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_application_2/Pages/HomePage/components/receitas_ativas.dart';
-import 'package:flutter_application_2/constants.dart';
+import 'package:flutter_application_2/Controller/constants.dart';
 import 'categorias.dart';
 
 class BodyHome extends StatelessWidget {

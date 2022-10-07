@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../constants.dart';
+import '../../Controller/constants.dart';
 import '../MyRevenues.dart';
 
 class NovaReceita extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../Models/Product.dart';
-import '../../../constants.dart';
+import '../../../Controller/constants.dart';
 
 class ImagemReceita extends StatelessWidget {
   const ImagemReceita({

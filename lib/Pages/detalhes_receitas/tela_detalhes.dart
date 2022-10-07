@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/detalhes_receitas/components/body.dart';
-import 'package:flutter_application_2/constants.dart';
+import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../Models/Product.dart';
