@@ -13,7 +13,7 @@ class Imagem_receita extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+      padding: const EdgeInsets.symmetric(horizontal: paddingpadrao),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

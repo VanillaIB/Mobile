@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       /* * ! Alterar a homepage*/
-      home: LoginPage(),
+      home: HomePage(),
       routes: <String, WidgetBuilder>{
         '/HomePage': (BuildContext context) => HomePage(),
         '/LoginPage': (BuildContext context) => LoginPage(),

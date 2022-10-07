@@ -37,7 +37,7 @@ class TelaDetalhes extends StatelessWidget {
           onPressed: () {},
         ),
         SizedBox(
-          width: kDefaultPaddin / 2,
+          width: paddingpadrao / 2,
         )
       ],
     );

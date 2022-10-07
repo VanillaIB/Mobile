@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/components/body.dart';
+import 'package:flutter_application_2/Pages/menu_lateral/menulateral.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -7,36 +8,41 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarCriado(),
+      appBar: appBarCriado(context),
+      drawer: menulateral(),
       body: BodyHome(),
     );
   }
 }
 
-AppBar appBarCriado() {
+AppBar appBarCriado(BuildContext context) {
   return AppBar(
+    automaticallyImplyLeading: false,
     backgroundColor: Colors.white,
-    elevation: 1,
-    leading: IconButton(
-      icon: SvgPicture.asset("assets/icons/back.svg"),
-      onPressed: () {},
-    ),
+    leading: Builder(builder: (context) {
+      return IconButton(
+        icon: SvgPicture.asset("assets/icons/list.svg"),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+      );
+    }),
     actions: <Widget>[
       IconButton(
         icon: SvgPicture.asset(
           "assets/icons/search.svg",
-          color: ktextcolor,
+          color: cortextopadrao,
         ),
         onPressed: () {},
       ),
       IconButton(
         icon: SvgPicture.asset(
-          "assets/icons/cart.svg",
-          color: ktextcolor,
+          "assets/icons/heart.svg",
+          color: cortextopadrao,
         ),
         onPressed: () {},
       ),
-      SizedBox(width: kDefaultPaddin / 2)
+      SizedBox(width: paddingpadrao / 2)
     ],
   );
 }

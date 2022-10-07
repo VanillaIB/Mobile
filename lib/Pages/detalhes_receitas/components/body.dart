@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
+import 'package:flutter_application_2/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'ImagemProduto.dart';
+import 'descricao.dart';
 
 class Body extends StatelessWidget {
   final Product product;
   const Body({super.key, required this.product});
+
+  get ktextcolor => null;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +25,10 @@ class Body extends StatelessWidget {
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(top: size.height * 0.3),
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.19,
+                    left: paddingpadrao,
+                  ),
                   // ignore: prefer_const_constructors
                   decoration: BoxDecoration(
                     // ignore: prefer_const_constructors
@@ -35,18 +44,22 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       Row(
-                        children: <Widget>[],
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(15, 200, 0, 0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            product.description,
-                            style: TextStyle(),
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              IconButton(
+                                onPressed: () {},
+                                icon: SvgPicture.asset(
+                                  "assets/icons/heart.svg",
+                                  color: ktextcolor,
+                                ),
+                              ),
+                              const Text("Favoritar")
+                            ],
                           ),
-                        ),
+                        ],
                       ),
+                      descricao(product: product)
                     ],
                   ),
                 ),

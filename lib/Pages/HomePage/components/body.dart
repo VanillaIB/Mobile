@@ -13,7 +13,7 @@ class BodyHome extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+          padding: const EdgeInsets.symmetric(horizontal: paddingpadrao),
           child: Text(
             "Nossas categorias",
             style: Theme.of(context)
@@ -25,13 +25,13 @@ class BodyHome extends StatelessWidget {
         Categorias(),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+            padding: const EdgeInsets.symmetric(horizontal: paddingpadrao),
             child: GridView.builder(
               itemCount: products.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: kDefaultPaddin,
-                  crossAxisSpacing: kDefaultPaddin,
+                  mainAxisSpacing: paddingpadrao,
+                  crossAxisSpacing: paddingpadrao,
                   childAspectRatio: 1),
               itemBuilder: (context, index) => ReceitasAtivas(
                 product: products[index],

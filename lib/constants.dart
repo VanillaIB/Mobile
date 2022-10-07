@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-const ktextcolor = Color(0xFF535363);
-const kTextLightColor = Color(0xFFACACAC);
-const kDefaultPaddin = 20.0;
+const cortextopadrao = Color(0xFF535363);
+const cortextopadraolight = Color(0xFFACACAC);
+const paddingpadrao = 20.0;
