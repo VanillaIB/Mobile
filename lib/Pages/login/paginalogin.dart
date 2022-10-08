@@ -3,11 +3,11 @@ import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/pages/login/ResetPassword.dart';
 import 'package:flutter_application_2/pages/login/signup.page.dart';
 
-class LoginPage extends StatelessWidget {
+class PaginaLogin extends StatelessWidget {
   final _email = TextEditingController();
   final _senha = TextEditingController();
 
-  LoginPage({super.key});
+  PaginaLogin({super.key});
 
   @override
   Widget build(BuildContext context) {

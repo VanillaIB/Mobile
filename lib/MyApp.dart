@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
-import 'package:flutter_application_2/Pages/MyRevenues.dart';
 import 'package:flutter_application_2/Pages/login/ResetPassword.dart';
 import 'package:flutter_application_2/Pages/login/SendPass.dart';
-import 'package:flutter_application_2/Pages/nova_receita/NovaReceita.dart';
-import 'Pages/login/LoginPage.dart';
+import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
+import 'Pages/login/paginalogin.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,10 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       /* * ! Alterar a homepage*/
-      home: LoginPage(),
+      home: PaginaLogin(),
       routes: <String, WidgetBuilder>{
         '/HomePage': (BuildContext context) => const HomePage(),
-        '/LoginPage': (BuildContext context) => LoginPage(),
+        '/LoginPage': (BuildContext context) => PaginaLogin(),
         '/ResetPassword': (BuildContext context) => ResetPasswordPage(),
         '/Sendpass': (BuildContext context) => const SendEmail(),
       },

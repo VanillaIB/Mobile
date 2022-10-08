@@ -3,7 +3,7 @@ import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../Controller/constants.dart';
-import '../MyRevenues.dart';
+import '../receitasfavoritas.dart';
 
 class NovaReceita extends StatelessWidget {
   const NovaReceita({super.key});

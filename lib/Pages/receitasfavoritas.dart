@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../Controller/constants.dart';
 import 'HomePage/HomePage.dart';
-import 'nova_receita/NovaReceita.dart';
+import 'nova_receita/novareceita.dart';
 
 class MyRevenues extends StatelessWidget {
   final lista = receitas.length;
