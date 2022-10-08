@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/homepage/homepage.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../Controller/constants.dart';
-import '../receitasfavoritas/minhareceitas.dart';
+import '../receitasfavoritas.dart';
 
 class NovaReceita extends StatelessWidget {
   const NovaReceita({super.key});

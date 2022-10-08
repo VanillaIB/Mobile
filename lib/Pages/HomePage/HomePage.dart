@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/homepage/components/body.dart';
+import 'package:flutter_application_2/Pages/HomePage/components/body.dart';
 import 'package:flutter_application_2/Pages/menu_lateral/menulateral.dart';
 import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/svg.dart';
+import '../receitasfavoritas.dart';
 
 import '../receitasfavoritas/minhareceitas.dart';
 
