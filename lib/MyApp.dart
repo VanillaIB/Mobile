@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/HomePage': (BuildContext context) => const HomePage(),
         '/LoginPage': (BuildContext context) => LoginPage(),
         '/ResetPassword': (BuildContext context) => ResetPasswordPage(),
-        '/Sendpass': (BuildContext context) => SendEmail(),
+        '/Sendpass': (BuildContext context) => const SendEmail(),
       },
     );
   }
