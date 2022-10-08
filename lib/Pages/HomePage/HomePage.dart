@@ -5,8 +5,6 @@ import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import '../receitasfavoritas.dart';
 
-import '../receitasfavoritas/minhareceitas.dart';
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 

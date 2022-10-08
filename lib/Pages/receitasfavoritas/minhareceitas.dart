@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Product.dart';
 import 'package:flutter_svg/svg.dart';
-<<<<<<<< HEAD:lib/Pages/receitasfavoritas/minhareceitas.dart
 import '../../Controller/constants.dart';
-========
-
-import '../Controller/constants.dart';
-import 'HomePage/HomePage.dart';
-import 'nova_receita/novareceita.dart';
->>>>>>>> esse-funciona:lib/Pages/receitasfavoritas.dart
 
 class MyRevenues extends StatelessWidget {
   final lista = receitas.length;
