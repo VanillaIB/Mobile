@@ -22,9 +22,7 @@ class FavoriteRevenues extends StatelessWidget {
             itemCount: receitas.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: () {
-                  //here you can add youy action on grid element Tab
-                },
+                onTap: () {},
                 child: Card(
                   child: Stack(
                     alignment: FractionalOffset.bottomCenter,
