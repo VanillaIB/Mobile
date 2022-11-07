@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/paginalogin.dart';
 import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
+import 'package:provider/provider.dart';
 
+import '../../Controller/auth_service.dart';
 import '../receitasfavoritas.dart';
 
 class MenuLateral extends StatelessWidget {
@@ -68,10 +70,12 @@ class MenuLateral extends StatelessWidget {
                     height: 6,
                   ),
                   itemlista(
-                    text: "Sair",
-                    icon: Icons.exit_to_app,
-                    onClicked: () => itemSelecionado(context, 3),
-                  ),
+                      text: "Sair",
+                      icon: Icons.exit_to_app,
+                      onClicked: () => {
+                            context.read<AuthService>().logout(),
+                            itemSelecionado(context, 3),
+                          }),
                 ],
               ),
             ),

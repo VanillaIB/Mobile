@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/novasenha.dart';
-
 import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
 import 'package:flutter_application_2/Pages/receitasfavoritas/minhareceitas.dart';
 import 'package:flutter_application_2/Widgets/auth_check.dart';

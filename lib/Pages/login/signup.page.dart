@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Controller/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class SignupPage extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
 
   final _nome = TextEditingController();
-  final _email = TextEditingController();
-  final _senha = TextEditingController();
-
-  SignupPage({super.key});
+  final email = TextEditingController();
+  final senha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    registrar() async {
+      try {
+        await context.read<AuthService>().registrar(email.text, senha.text);
+      } on AuthException catch (e) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.message)));
+      }
+    }
+
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 10, left: 40, right: 40),
@@ -96,7 +105,7 @@ class SignupPage extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
-                        controller: _email,
+                        controller: email,
                         keyboardType: TextInputType.emailAddress,
                         decoration: const InputDecoration(
                           labelText: "E-mail",
@@ -126,7 +135,7 @@ class SignupPage extends StatelessWidget {
                     ),
                     TextFormField(
                         // autofocus: true,
-                        controller: _senha,
+                        controller: senha,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: const InputDecoration(
@@ -179,15 +188,7 @@ class SignupPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () {
-                    if (formkey.currentState?.validate() == true) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Cadastrado com Sucesso!')));
-                      Navigator.pop(context);
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text(
-                              'Erro ao realizar cadastro !Favor insira os dados corretamente!')));
-                    }
+                    registrar();
                   },
                 ),
               ),

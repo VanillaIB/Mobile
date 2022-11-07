@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '735299593976',
     projectId: 'receitas-10b21',
     storageBucket: 'receitas-10b21.appspot.com',
-    iosClientId: '735299593976-jntm71a7pploh05ktt2m0rceree850i9.apps.googleusercontent.com',
+    iosClientId:
+        '735299593976-jntm71a7pploh05ktt2m0rceree850i9.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication2',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '735299593976',
     projectId: 'receitas-10b21',
     storageBucket: 'receitas-10b21.appspot.com',
-    iosClientId: '735299593976-jntm71a7pploh05ktt2m0rceree850i9.apps.googleusercontent.com',
+    iosClientId:
+        '735299593976-jntm71a7pploh05ktt2m0rceree850i9.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication2',
   );
 }

@@ -1,16 +1,33 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/homepage/homepage.dart';
+import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/novasenha.dart';
 import 'package:flutter_application_2/pages/login/signup.page.dart';
+import 'package:flutter_application_2/Controller/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class PaginaLogin extends StatelessWidget {
-  final _email = TextEditingController();
-  final _senha = TextEditingController();
+  final email = TextEditingController();
+  final senha = TextEditingController();
+
+  late String titulo;
+  late String actionButton;
+  late String toggleButton;
 
   PaginaLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
+    login() async {
+      try {
+        await context.read<AuthService>().login(email.text, senha.text);
+      } on AuthException catch (e) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.message)));
+      }
+    }
+
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -30,7 +47,7 @@ class PaginaLogin extends StatelessWidget {
               height: 20,
             ),
             TextFormField(
-              controller: _email,
+              controller: email,
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
@@ -55,7 +72,7 @@ class PaginaLogin extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
-              controller: _senha,
+              controller: senha,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: const InputDecoration(
@@ -128,25 +145,7 @@ class PaginaLogin extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    final String email = _email.text;
-                    final String senha = _senha.text;
-
-                    if (email == 'teste' && senha == '1234') {
-                      // ignore: avoid_print
-                      print('Login Realizado');
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ),
-                      );
-                    } else {
-                      // ignore: avoid_print
-                      print('Erro ao efetuar Login!');
-
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Dados Incorretos!')));
-                    }
+                    login();
                   },
                 ),
               ),
