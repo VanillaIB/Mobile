@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
-import 'package:flutter_application_2/Pages/login/novasenha.dart';
-import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
-import 'package:flutter_application_2/Pages/receitasfavoritas/minhareceitas.dart';
 import 'package:flutter_application_2/Widgets/auth_check.dart';
-import 'Pages/login/paginalogin.dart';
-import 'Pages/login/senhaok.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +12,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       /* * ! Alterar a homepage*/
       home: AuthCheck(),
-      routes: <String, WidgetBuilder>{
-        '/HomePage': (BuildContext context) => const HomePage(),
-        '/LoginPage': (BuildContext context) => PaginaLogin(),
-        '/ResetPassword': (BuildContext context) => ResetPasswordPage(),
-        '/Sendpass': (BuildContext context) => const SendEmail(),
-      },
     );
   }
 }

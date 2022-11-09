@@ -2,24 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Controller/auth_service.dart';
 import 'package:provider/provider.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
+  SignupPage({Key? key}) : super(key: key);
+
+  @override
+  _SignupPageState createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   final formkey = GlobalKey<FormState>();
 
   final _nome = TextEditingController();
   final email = TextEditingController();
   final senha = TextEditingController();
 
+  registrar() async {
+    try {
+      await context.read<AuthService>().registrar(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    registrar() async {
-      try {
-        await context.read<AuthService>().registrar(email.text, senha.text);
-      } on AuthException catch (e) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(e.message)));
-      }
-    }
-
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 10, left: 40, right: 40),

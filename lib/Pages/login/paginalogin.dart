@@ -1,33 +1,31 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/novasenha.dart';
 import 'package:flutter_application_2/pages/login/signup.page.dart';
 import 'package:flutter_application_2/Controller/auth_service.dart';
 import 'package:provider/provider.dart';
 
-class PaginaLogin extends StatelessWidget {
-  final email = TextEditingController();
+class PaginaLogin extends StatefulWidget {
+  PaginaLogin({Key? key}) : super(key: key);
+
+  @override
+  _PaginaLoginState createState() => _PaginaLoginState();
+}
+
+class _PaginaLoginState extends State<PaginaLogin> {
+  var email = TextEditingController();
   final senha = TextEditingController();
 
-  late String titulo;
-  late String actionButton;
-  late String toggleButton;
-
-  PaginaLogin({super.key});
+  login() async {
+    try {
+      await context.read<AuthService>().login(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    login() async {
-      try {
-        await context.read<AuthService>().login(email.text, senha.text);
-      } on AuthException catch (e) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(e.message)));
-      }
-    }
-
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
