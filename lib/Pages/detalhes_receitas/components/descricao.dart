@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../Models/Product.dart';
+import '../../../Models/Receita.dart';
 import '../../../Controller/constants.dart';
 
 class Descricao extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/detalhes_receitas/tela_detalhes.dart';
 
-import '../../../Models/Product.dart';
+import '../../../Models/Receita.dart';
 
 class ReceitasAtivas extends StatelessWidget {
   final Receita product;

@@ -3,7 +3,7 @@ import 'package:flutter_application_2/Pages/detalhes_receitas/components/body.da
 import 'package:flutter_application_2/Controller/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../Models/Product.dart';
+import '../../Models/Receita.dart';
 import '../../Models/appbargeral.dart';
 
 class TelaDetalhes extends StatelessWidget {

@@ -1,36 +1,17 @@
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
+const String DATABASE_NAME = 'receitas';
 
-class DB {
-  DB._();
-  static final DB instance = DB._();
-  static Database? _database;
+const String RECEITAS_TABLE_NAME = 'receitas';
+const String RECEITAS_COLUMN_RECEITAID = 'receitaID';
+const String RECEITAS_COLUMN_TITLE = 'title';
+const String RECEITAS_COLUMN_DESCRIPTION = 'description';
+const String RECEITAS_COLUMN_CATEGORY = 'category';
 
-  get database async {
-    if (_database != null) return _database;
-
-    return await _initDatabase();
-  }
-
-  _initDatabase() async {
-    return await openDatabase(
-      join(await getDatabasesPath(), 'receitas.db'),
-      version: 1,
-      onCreate: _onCreate,
-    );
-  }
-
-  _onCreate(db, versao) async {
-    await db.execute(_receita);
-  }
-
-  String get _receita => '''
-    CREATE TABLE receita (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      nome TEXT,
-      ingredientes TEXT,
-      modo_de_preparo TEXT,
-      categoria TEXT
-    )
-  ''';
-}
+const String CREATE_RECEITAS_TABLE_SCRIPT = '''
+CREATE TABLE $RECEITAS_TABLE_NAME
+(
+  $RECEITAS_COLUMN_RECEITAID INTEGER PRIMARY KEY,
+  $RECEITAS_COLUMN_TITLE TEXT.
+  $RECEITAS_COLUMN_DESCRIPTION TEXT,
+  $RECEITAS_COLUMN_CATEGORY TEXT
+)
+''';

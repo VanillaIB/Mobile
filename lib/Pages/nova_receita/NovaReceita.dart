@@ -205,8 +205,6 @@ class NovaReceita extends StatelessWidget {
                     if (formkey.currentState?.validate() == true) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text('Receita cadastrada com Sucesso!')));
-                      Navigator.pop(context);
-                    } else {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text(
                               'Erro ao realizar cadastro da receita! Favor insira os dados corretamente!')));

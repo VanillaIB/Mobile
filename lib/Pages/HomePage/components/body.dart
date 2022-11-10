@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Models/Product.dart';
+import 'package:flutter_application_2/Models/Receita.dart';
 import 'package:flutter_application_2/Pages/homepage/components/receitas_ativas.dart';
 import 'package:flutter_application_2/Controller/constants.dart';
 import 'categorias.dart';
