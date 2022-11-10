@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
       title: 'Quindimliça receitas',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
-      /* * ! Alterar a homepage*/
       home: AuthCheck(),
     );
   }

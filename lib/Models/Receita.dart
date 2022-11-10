@@ -1,46 +1,55 @@
-import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
 
-class Receita {
-  final String image, title, description;
-  final int id;
+class Receita extends Equatable {
+  final String image, title, description, category;
+  late int receitaID;
   Receita({
-    required this.id,
+    required this.receitaID,
     required this.image,
     required this.title,
     required this.description,
+    required this.category,
   });
+
+  @override
+  List<Object?> get props => [receitaID];
 }
 
 List<Receita> receitas = [
   Receita(
-    id: 0,
+    receitaID: 0,
     title: "Carolina",
     description: dummyText,
     image: "assets/images/carolina.png",
+    category: 'Doces',
   ),
   Receita(
-    id: 1,
+    receitaID: 1,
     title: "Feijoada",
     description: dummyText,
     image: "assets/images/feijoada.jpg",
+    category: '',
   ),
   Receita(
-    id: 2,
+    receitaID: 2,
     title: "Figado Acebolado",
     description: dummyText,
     image: "assets/images/figado_acebolado.jpeg",
+    category: '',
   ),
   Receita(
-    id: 3,
+    receitaID: 3,
     title: "Porco Marzipa",
     description: dummyText,
     image: "assets/images/porco_marzipa.jpg",
+    category: '',
   ),
   Receita(
-    id: 4,
+    receitaID: 4,
     title: "Strogonoff de Frango",
     description: dummyText,
     image: "assets/images/strogonoff-de-frango.jpg",
+    category: '',
   ),
 ];
 

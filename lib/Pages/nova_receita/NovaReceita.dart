@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Models/Receita.dart';
 import 'package:flutter_application_2/Pages/homepage/homepage.dart';
+import 'package:flutter_application_2/database/DB_methods.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../Controller/constants.dart';
 import '../receitasfavoritas.dart';

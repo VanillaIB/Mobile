@@ -19,7 +19,7 @@ class ReceitasAtivas extends StatelessWidget {
         context,
         MaterialPageRoute(
           builder: (context) => TelaDetalhes(
-            product: receitas[product.id],
+            product: receitas[product.receitaID],
           ),
         ),
       ),
