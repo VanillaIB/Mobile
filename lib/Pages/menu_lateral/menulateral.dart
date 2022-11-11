@@ -122,7 +122,7 @@ class MenuLateral extends StatelessWidget {
       case 2:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const NovaReceita(),
+            builder: (context) => NovaReceita(),
           ),
         );
         break;

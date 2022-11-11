@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Models/Receita.dart';
 import 'package:flutter_application_2/Pages/homepage/homepage.dart';
+import 'package:flutter_application_2/Pages/nova_receita/mobx_store/receita_store.dart';
 import 'package:flutter_application_2/database/DB_methods.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 import '../../Controller/constants.dart';
 import '../receitasfavoritas.dart';
 
 class NovaReceita extends StatelessWidget {
-  const NovaReceita({super.key});
+  ReceitaStore _receitaStore = GetIt.I<ReceitaStore>();
+  late BuildContext _buildContext;
+  get controller => null;
 
   @override
   Widget build(BuildContext context) {
     final dropValue = ValueNotifier('');
     final categorias = ['Doces', 'Salgados', 'Bolos', 'Carnes'];
+    _buildContext = context;
 
     final formkey = GlobalKey<FormState>();
 
-    final _nomeReceita = TextEditingController();
-    final _ingredientes = TextEditingController();
-    final _preparo = TextEditingController();
+    final nomeReceita = TextEditingController();
+    final ingredientes = TextEditingController();
+    final preparo = TextEditingController();
     //final _categoria = TextEditingController();
 
     return Scaffold(
       appBar: buildAppBar(context),
       body: Container(
-        padding: EdgeInsets.only(top: 10, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 10, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
@@ -72,7 +78,7 @@ class NovaReceita extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Form(
@@ -80,62 +86,71 @@ class NovaReceita extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
-                        // autofocus: true,
-                        controller: _nomeReceita,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: "Titulo",
-                          labelStyle: TextStyle(
-                            color: Colors.black38,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 20,
-                          ),
-                        ),
-                        style: TextStyle(
+                      textInputAction: TextInputAction.next,
+                      // autofocus: true,
+                      controller: nomeReceita,
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        labelText: "Titulo",
+                        labelStyle: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w400,
                           fontSize: 20,
                         ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return "Campo Obrigatório!";
-                          } else {
-                            return null;
-                          }
-                        }),
-                    SizedBox(
+                      ),
+                      style: const TextStyle(
+                        fontSize: 20,
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return "Campo Obrigatório!";
+                        } else {
+                          return null;
+                        }
+                      },
+                      onChanged: (value) =>
+                          _receitaStore.atualizarTitle(title: value),
+                    ),
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
-                        // autofocus: true,
-                        maxLines: null,
-                        controller: _ingredientes,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: "Ingredientes",
-                          labelStyle: TextStyle(
-                            color: Colors.black38,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 20,
-                          ),
-                        ),
-                        style: TextStyle(
+                      textInputAction: TextInputAction.next,
+                      // autofocus: true,
+                      maxLines: null,
+                      controller: ingredientes,
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        labelText: "Ingredientes",
+                        labelStyle: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w400,
                           fontSize: 20,
                         ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return "Campo Obrigatório!";
-                          } else {
-                            return null;
-                          }
-                        }),
-                    SizedBox(
+                      ),
+                      style: const TextStyle(
+                        fontSize: 20,
+                      ),
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return "Campo Obrigatório!";
+                        } else {
+                          return null;
+                        }
+                      },
+                      onChanged: (value) => _receitaStore.atualizarDescription(
+                          description: value),
+                    ),
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
+                        textInputAction: TextInputAction.next,
                         // autofocus: true,
-                        controller: _preparo,
+                        controller: preparo,
                         maxLines: null,
                         keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: "Modo de Preparo",
                           labelStyle: TextStyle(
                             color: Colors.black38,
@@ -143,7 +158,7 @@ class NovaReceita extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
-                        style: TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
                             return "Campo Obrigatório!";
@@ -162,7 +177,7 @@ class NovaReceita extends StatelessWidget {
                           items: categorias
                               .map(
                                 (opcao) => DropdownMenuItem(
-                                    child: Text(opcao), value: opcao),
+                                    value: opcao, child: Text(opcao)),
                               )
                               .toList(),
                         );
@@ -170,13 +185,13 @@ class NovaReceita extends StatelessWidget {
                     ),
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -190,30 +205,25 @@ class NovaReceita extends StatelessWidget {
                   Radius.circular(5),
                 ),
               ),
-              child: SizedBox.expand(
-                child: TextButton(
-                  child: Text(
-                    "Cadastrar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20,
+              child: SizedBox.expand(child: Observer(
+                builder: (_) {
+                  return ElevatedButton(
+                    onPressed:
+                        _receitaStore.formularioValido ? _botaoGravar : null,
+                    child: const Text(
+                      "Cadastrar",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    if (formkey.currentState?.validate() == true) {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text('Receita cadastrada com Sucesso!')));
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text(
-                              'Erro ao realizar cadastro da receita! Favor insira os dados corretamente!')));
-                    }
-                  },
-                ),
-              ),
+                  );
+                },
+              )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -234,6 +244,24 @@ class NovaReceita extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  // ignore: dead_code
+  _botaoGravar() async {
+    await DB_methods().create(
+      Receita(
+          receitaID: 0,
+          image: _receitaStore.id,
+          title: _receitaStore.title,
+          description: _receitaStore.description,
+          category: _receitaStore.category),
+    );
+
+    ScaffoldMessenger.of(_buildContext).showSnackBar(
+      const SnackBar(
+        content: Text('Parabens'),
       ),
     );
   }
