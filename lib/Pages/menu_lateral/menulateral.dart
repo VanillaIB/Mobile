@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Pages/HomePage/HomePage.dart';
 import 'package:flutter_application_2/Pages/login/paginalogin.dart';
+import 'package:flutter_application_2/Pages/nova_receita/list.dart';
 import 'package:flutter_application_2/Pages/nova_receita/novareceita.dart';
 import 'package:provider/provider.dart';
 
@@ -56,6 +57,11 @@ class MenuLateral extends StatelessWidget {
                     text: "Adicionar minha receita",
                     icon: Icons.receipt_long_outlined,
                     onClicked: () => itemSelecionado(context, 2),
+                  ),
+                  itemlista(
+                    text: "Novidades!",
+                    icon: Icons.add_alert_outlined,
+                    onClicked: () => itemSelecionado(context, 4),
                   ),
                   const SizedBox(
                     height: 24,
@@ -130,6 +136,13 @@ class MenuLateral extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => PaginaLogin(),
+          ),
+        );
+        break;
+      case 4:
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ReceitaListPage(),
           ),
         );
         break;
