@@ -8,6 +8,7 @@ class ReceitaListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ReceitaModel receita2;
     return Scaffold(
       appBar: AppBar(
         title: Text('Recem adicionadas'),
@@ -18,26 +19,24 @@ class ReceitaListPage extends StatelessWidget {
           future: DB_methods().getAll(),
           builder: (BuildContext context,
               AsyncSnapshot<List<ReceitaModel>> snapshot) {
-            if (snapshot.hasData) {
+            if (!snapshot.hasData) {
               return Center(
                 child: CircularProgressIndicator(
                   color: Colors.yellow.shade400,
                 ),
               );
+            } else {
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  final ReceitaModel receita = snapshot.data![index];
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 6, right: 7),
+                    child: Text(receita.title.toString()),
+                  );
+                },
+              );
             }
-
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                ReceitaModel receita = snapshot.data![index];
-                return Padding(
-                  padding: const EdgeInsets.only(left: 6, right: 7),
-                  child: Text(
-                    receita.title,
-                  ),
-                );
-              },
-            );
           },
         ),
       ),

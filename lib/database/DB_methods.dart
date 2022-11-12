@@ -32,7 +32,7 @@ class DB_methods {
       receita.receitaID = await db.rawInsert(
           '''insert into $RECEITAS_TABLE_NAME($RECEITAS_COLUMN_TITLE, $RECEITAS_COLUMN_DESCRIPTION, $RECEITAS_COLUMN_CATEGORY)
       VALUES(
-        '${receita.title}, '${receita.description}, '${receita.category}')
+        '${receita.title}', '${receita.description}', '${receita.category}')
         ''');
     } catch (ex) {
       return;
@@ -45,7 +45,7 @@ class DB_methods {
 
       final List<Map<String, dynamic>> receitaMap = await db.query(
         RECEITAS_TABLE_NAME,
-        orderBy: 'RECEITAS_COLUMN_TITLE ASC',
+        orderBy: '$RECEITAS_COLUMN_TITLE ASC',
       );
 
       return List.generate(receitaMap.length, (index) {
