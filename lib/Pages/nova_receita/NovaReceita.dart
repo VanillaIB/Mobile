@@ -8,6 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import '../../Controller/constants.dart';
 import '../receitasfavoritas.dart';
+import 'FotoReceita.dart';
 
 class NovaReceita extends StatelessWidget {
   ReceitaStore _receitaStore = GetIt.I<ReceitaStore>();
@@ -73,7 +74,11 @@ class NovaReceita extends StatelessWidget {
                       Icons.add,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FotoReceita(),
+                            fullscreenDialog: true)),
                   ),
                 ),
               ),

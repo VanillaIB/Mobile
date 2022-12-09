@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Pages/nova_receita/NovaReceita.dart';
 import 'package:flutter_application_2/Widgets/auth_check.dart';
 
 class MyApp extends StatelessWidget {
